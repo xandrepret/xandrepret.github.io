@@ -1,18 +1,18 @@
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {
-  myFunction()
+
+$(window).scroll(function(){
+  parallax();
+});
+
+function parallax(){
+  var scrolled = $(window).scrollTop();
+  $('.bg').css('top',-(scrolled*0.1)+'px');
+  $('header .content').css('top',50+(scrolled*0.1)+'%');
+  $('header .content').css('opacity',1-(scrolled*0.01)/10);
+  $('header .content').css('opacity',1-(scrolled*0.01)/10);
 };
 
-// Get the navbar
-var navbar = document.getElementById("navbar");
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-// Add the sticky class to the navbar when you reach its scroll position.
-//Remove when the scroll postition changes
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
+$('.IA_window .full_scr').on('click',function(){
+  $(this).parents().toggleClass('f_scr');
+
+  $("html, body").animate({ scrollTop: $(this).parents().offset().top }, 500);
+});
