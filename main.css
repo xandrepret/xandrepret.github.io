@@ -179,6 +179,7 @@ header .content h4 {
 .skills progress::-webkit-progress-value {
   background-color: #329ad1;
 }
+
 .skills progress::-moz-progress-bar {
   background-color: #329ad1;
 }
